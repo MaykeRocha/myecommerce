@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="author" content="Mayke Rocha"/>
+  <meta name="e-commerce" content="e-commerce 2.0">
+  <title>e-commerce</title>
+  <!--=============== FAVICON ===============-->
+  <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+  <!--=============== BOXICONS ===============-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+  <!--=============== CSS ===============-->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+  <!--==================== LOADER ====================-->
+
+  <div class="load" id="load">
+    <img class="motors" src="assets/img/menu.png" alt="">
+  </div>
+
+  <!--==================== HEADER ====================-->
+  <header class="header" id="header">
+    <nav class="nav container">
+      <a href="#" class="nav__logo">
+        <img class="lambor" src="assets/img/carro.png" alt="">
+      </a>
+
+      <div class="nav__menu" id="nav-menu">
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a href="#home" class="nav__link active-link">Inicio</a>
+          </li>
+          <li class="nav__item">
+            <a href="#products" class="nav__link">Productos</a>
+          </li>
+        </ul>
+
+        <div class="nav__close" id="nav-close">
+          <i class='bx bx-x'></i>
+        </div>
+      </div>
+
+      <div class="nav__btns">
+        <!-- Theme change button -->
+        <i class='bx bx-moon change-theme' id="theme-button"></i>
+
+        <div class="nav__shop" id="cart-shop">
+          <i class='bx bx-shopping-bag'></i>
+          <span id="cart-count" class="count"></span>
+        </div>
+
+        <div class="nav__toggle" id="nav-toggle">
+          <i class='bx bx-grid-alt'></i>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!--==================== CART ====================-->
+  <div class="cart" id="cart">
+    <i class='bx bx-x cart__close' id="cart-close"></i>
+
+    <h2 class="cart__title-center"><i class='bx bx-cart'></i> Carrito</h2>
+
+    <div id="cart__container" class="cart__container">
+
+      <article class="cart__card">
+        <div class="cart__box">
+          <img src="assets/img/featured1.png" alt="Hoodies" class="cart__img">
+        </div>
+
+        <div class="cart__details">
+          <h3 class="cart__title">Hoodies <span class="cart__price">$456.00</span></h3>
+
+          <div class="cart__amount">
+            <div class="cart__amount-content">
+              <span class="cart__amount-box removeToCart" data-id="1">
+                <i class="bx bx-minus"></i>
+              </span>
+
+              <span class="cart__amount-number">1</span>
+
+              <span class="cart__amount-box addToCart" data-id="1">
+                <i class="bx bx-plus"></i>
+              </span>
+            </div>
+
+            <i class="bx bx-trash-alt cart__amount-trash deleteToCart" data-id="1"></i>
+          </div>
+
+          <span class="cart__subtotal">
+            <span class="cart__stock">Quedan 4 unidades</span>
+            <span class="cart__subtotal-price">$456.00</span>
+          </span>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="cart__prices">
+      <span class="cart__prices-item"><span id="items-count"></span> Unidades</span>
+      <span class="cart__prices-total" id="cart-total"></span>
+    </div>
+
+    <div id="action-buttons" class="cart__checkout">
+      <button class="button cart__btn" id="cart-checkout" disabled><i class='bx bxs-check-shield'></i> Comprar</button>
+      <button class="button cart__btn" id="cart-empty" disabled><i class='bx bx-cart-alt'></i> Limpiar</button>
+    </div>
+
+  </div>
+
+  <!--==================== MAIN ====================-->
+  <main class="main">
+    <!--==================== HOME ====================-->
+    <section class="home" id="home">
+      <div class="home__container container grid">
+        <div class="home__img-bg">
+          <img src="assets/img/home.png" alt="" class="home__img"> 
+        </div>
+
+        <div class="home__data">
+          <h1 class="home__title">New Model <br> Lamborghinni edition 2022-2023</h1>
+          <p class="home__description">
+            Lamborghinni presenta los nuevos modelos de la coleccion 2023. El proyecto <em>planets</em> ya esta en marcha.
+          </p>
+
+          <div class="home__btns">
+            <a href="about.html" class="button button--transparent button--small">
+              Descubrir
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--==================== PRODUCTS ====================-->
+    <section class="products" id="products">
+      <div class="products__container container">
+        <ul class="products__filters">
+          <li class="products__item products__line" data-filter="all">
+            <h3 class="products__title">
+              Mostrar todo
+            </h3>
+            <span class="products__stock">
+              Mostrar todos los productos
+            </span>
+          </li>
+
+          <li class="products__item products__line active-product" data-filter=".hoodies">
+            <h3 class="products__title">
+              Modelos 2022
+            </h3>
+            <span class="products__stock">
+              3 lamborghinis en <em>STOCK</em>
+            </span>
+          </li>
+
+          <li class="products__item products__line" data-filter=".shirts">
+            <h3 class="products__title">
+              Deportivos
+            </h3>
+            <span class="products__stock">
+              2 lamborghinis en <em>STOCK</em> 
+            </span>
+          </li>
+
+          <li class="products__item" data-filter=".sweatshirts">
+            <h3 class="products__title">
+              Modelos 2023
+            </h3>
+            <span class="products__stock">
+              1 Lamborghinis en <em>STOCK</em>
+            </span>
+          </li>
+        </ul>
+
+        <div class="products__content grid" id="products__content">
+
+          <article class="products__card hoodies">
+            <div class="products__shape">
+              <img src="assets/img/featured1.png" alt="Hoodies" class="products__img">
+            </div>
+
+            <div class="products__data">
+              <h2 class="products__name">Hoodies</h2>
+              <div class="">
+                <h3 class="products__price">$456.00</h3>
+                <span class="products__quantity">Quedan solo 5 unidades</span>
+              </div>
+              <button type="button" class="button products__button addToCart" data-id="1">
+                <i class="bx bx-plus"></i>
+              </button>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!--==================== FOOTER ====================-->
+  <footer class="footer section">
+    <div class="footer__container container grid">
+      <div class="footer__content">
+        <h3 class="footer__title">Encuentranos</h3>
+
+        <ul class="footer__list">
+          <li>Lima-Peru</li>
+        </ul>
+      </div>
+      <div class="footer__content">
+        <h3 class="footer__title">Sobre nosotros</h3>
+
+        <ul class="footer__links">
+          <li>
+            <a href="#" class="footer__link">Centro de soporte</a>
+          </li>
+          <li>
+            <a href="#" class="footer__link">Apoyo al cliente</a>
+          </li>
+          <li>
+            <a href="#" class="footer__link">Sobre nosotros</a>
+          </li>
+          <li>
+            <a href="#" class="footer__link">Derechos de autor</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer__content">
+        <h3 class="footer__title">Producto</h3>
+
+        <ul class="footer__links">
+          <li>
+            <a href="#" class="footer__link">Lamborghini GT-X</a>
+          </li>
+          <li>
+            <a href="#" class="footer__link">Lamborghini GT-XXT</a>
+          </li>
+          <li>
+            <a href="#" class="footer__link">Lamborghini Toro</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer__content">
+        <h3 class="footer__title">Social</h3>
+
+        <ul class="footer__social">
+          <a href="https://www.facebook.com/profile.php?id=100073908476865" target="_blank" class="footer__social-link">
+            <i class='bx bxl-facebook'></i>
+          </a>
+
+          <a href="https://twitter.com/" target="_blank" class="footer__social-link">
+            <i class='bx bxl-twitter'></i>
+          </a>
+
+          <a href="https://www.instagram.com/sr_mayke/?next=%2F" target="_blank" class="footer__social-link">
+            <i class='bx bxl-instagram'></i>
+          </a>
+        </ul>
+      </div>
+    </div>
+
+    <span class="footer__copy">&#169; ACADEMLO SHOP. Todos los derechos reservados</span>
+  </footer>
+
+  <!--=============== SCROLL UP ===============-->
+  <a href="#" class="scrollup" id="scroll-up">
+    <i class='bx bx-up-arrow-alt scrollup__icon'></i>
+  </a>
+
+  <!--=============== MIXITUP FILTER ===============-->
+  <script src="assets/js/helpers/mixitup.min.js"></script>
+
+  <!--=============== MAIN JS ===============-->
+  <script src="assets/js/main.js" type="module"></script>
+  <script src="assets/js/cart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+
+</html>
